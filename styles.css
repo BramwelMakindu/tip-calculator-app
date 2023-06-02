@@ -1,0 +1,299 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Mono', monospace;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: hsl(185, 41%, 84%);
+}
+
+header{
+    margin-bottom: 2rem;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 25px;
+    width: 800px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+    height: 400px;
+}
+
+.left-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left-side h3{
+    font-size: 16px;
+    color: hsl(186, 14%, 43%);
+}
+
+.bill-input-div, .people-div{
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    background-color: hsl(189, 41%, 97%);
+}
+
+.bill-input-div input, .people-div input{
+    text-align: end;
+    font-size: 24px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: hsl(183, 100%, 15%);
+    width: 60%;
+}
+
+.tip-buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+    margin-top: 10px;
+}
+
+.tip-buttons button, .tip-input{
+    font-size: 24px;
+}
+
+.tip-buttons button{
+    border: none;
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 5px;
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+    transition: background-color .2s;
+}
+
+.tip-buttons button:active{
+    background-color: hsl(172, 67%, 45%);
+}
+
+.tip-input{
+    width: 120px;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: hsl(189, 41%, 97%);
+}
+
+.tip-input::placeholder, .bill-input-div input::placeholder, .people-div input::placeholder{
+    color: hsl(184, 14%, 56%);
+}
+
+.tip-input.active{
+    border: 1px solid hsl(172, 67%, 45%);
+}
+
+.people{
+    display: flex;
+    justify-content: space-between;
+}
+
+.error-message{
+    color: red;
+    font-size: 16px;
+    display: none;
+}
+
+.error-message.active{
+    display: block;
+}
+
+.people-div.active{
+    border: 1px solid red;
+}
+
+.right-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: hsl(183, 100%, 15%);
+}
+
+.tip{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.amount{
+    display: flex;
+    align-items: center;
+}
+
+.tip p{
+    color: hsl(0, 0%, 100%);
+}
+
+.tip span{
+    color: hsl(184, 14%, 56%);
+}
+
+.amount span{
+    color: hsl(172, 67%, 45%);
+    font-size: 35px;
+}
+
+.tip h2{
+    font-size: 40px;
+    color: hsl(172, 67%, 45%);
+}
+
+.tip img{
+    width: 20px;
+}
+
+.reset-btn{
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    color: rgb(20, 20, 20);
+    background-color: hsl(172, 67%, 45%);
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.reset-btn:hover{
+    background-color: hsl(172, 76%, 59%);
+}
+
+.reset-btn:active{
+    background-color: hsl(172, 76%, 67%);
+}
+
+footer{
+    margin-top: 1rem;
+}
+
+.attribution a{
+    color: hsl(183, 100%, 15%);
+}
+
+.attribution a:hover{
+    color: hsl(172, 67%, 45%);
+}
+
+/*------for small screen-----*/
+
+@media screen and (max-width: 400px){
+    body{
+        height: auto;
+        padding: 20px;
+    }
+    .bill-input-div input, .people-div input, .tip-buttons button, .tip-input{
+        font-size: 18px;
+    }
+
+    .container{
+        width: 300px;
+        display: block;
+        height: auto;
+    }
+
+    .right-side{
+        margin-top: 1rem;
+    }
+
+    .bill, .tip-div{
+        margin-bottom: 1rem;
+    }
+
+    .tip h2{
+        font-size: 20px;
+    }
+
+    .amount span{
+        font-size: 18px;
+    }
+
+    .reset-btn{
+        font-size: 16px;
+    }
+
+    .tip-input{
+        width: 100px;
+    }
+
+    .left-side h3{
+        font-size: 12px;
+    }
+
+    .error-message{
+        font-size: 12px;
+    }
+    .attribution{
+        font-size: 10px;
+    }
+
+    .tip-buttons{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tip-input{
+        width: 130px;
+    }
+
+}
+
+@media (min-width: 401px) and (max-width: 750px){
+    body{
+        height: auto;
+        padding: 20px;
+    }
+
+    .container{
+        display: block;
+        width: 350px;
+        height: auto;
+    }
+
+    .right-side{
+        margin-top: 1rem;
+    }
+
+    .bill, .tip-div{
+        margin-bottom: 1rem;
+    }
+
+    .tip-buttons{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tip h2{
+        font-size: 30px;
+    }
+
+    .tip-input{
+        width: 150px;
+    }
+
+    .amount span{
+        font-size: 25px;
+    }
+
+    .attribution{
+        font-size: 10px;
+    }
+}
